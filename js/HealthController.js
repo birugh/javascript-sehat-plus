@@ -44,7 +44,7 @@ export function HitungHPL(tanggal, bulan, tahun) {
 
 // ! Proses perhitungan AMB
 
-export function HitungAMB(gender, HPHT, berat, tinggi, umur) {
+export function HitungAMB(gender, berat, tinggi, umur) {
     if (gender.toLowerCase() === 'pria')
         return PriaHPL(berat, tinggi, umur);
     else if (gender.toLowerCase() === 'wanita')
@@ -54,9 +54,9 @@ export function HitungAMB(gender, HPHT, berat, tinggi, umur) {
 }
 
 function PriaHPL(berat, tinggi, umur) {
-    return (10 * berat) + (6.25 * tinggi) + (5 * umur) + 5;
+    return (10 * berat) + (6.25 * tinggi) - (5 * umur) + 5;
 }
 
 function WanitaHPL(berat, tinggi, umur) {
-    return (10 * berat) + (6.25 * tinggi) + (5 * umur) - 161;
+    return (10 * berat) + (6.25 * tinggi) - (5 * umur) - 161;
 }
