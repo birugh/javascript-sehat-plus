@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tracker - Sehat Plus</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/component.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/utilities.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/resp.css">
+</head>
+
+<body>
+    <header class="container">
+        <nav class="grid-row">
+            <div class="nav__logo col-2 col-xl-4 col-md-6">
+                <a href="/index.html">
+                    <h1>Sehat Plus</h1>
+                </a>
+            </div>
+            <div class="nav__content grid-row col-10 col-xl-8">
+                <a class="btn" href="/views/imt.html">IMT</a>
+                <a class="btn selected" href="/views/hpl.html">HPL</a>
+                <a class="btn" href="/views/amb.html">AMB</a>
+            </div>
+            <div class="col-6 nav__mobile col-xxl-1 col-md-6">
+                <div class="hamburger__menu">
+                    <span class="menu__linear"></span>
+                    <span class="menu__linear"></span>
+                    <span class="menu__linear"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="mbt-20">
+            <div class="container text-center">
+                <form id="formHPL" action="">
+                    <label for="dateUser">Hari Pertama Haid Terakhir</label>
+                    <input type="date" name="date" id="dateUser">
+                    <input type="submit" name="submit" id="submitHPL">
+                    <p id="outputHPL"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="../js/index.js"></script>
+</body>
+
+</html>

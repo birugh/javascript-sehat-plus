@@ -26,7 +26,6 @@ export function HitungIMT(berat, tinggi) {
 // ! Proses perhitungan HPL
 
 export function HitungHPL(tanggal, bulan, tahun) {
-    bulan = bulan - 1;
     let dateNow = new Date(tahun, bulan, tanggal);
 
     dateNow.setDate(dateNow.getDate() + 7);
