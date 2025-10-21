@@ -4,19 +4,19 @@ export function HitungIMT(berat, tinggi) {
     let userIMT = berat / (tinggi * 2);
     if (userIMT <= 18.5) {
         // TODO: Kurus
-        return;
+        return 'Kurus';
     }
     else if (userIMT >= 24.9) {
         // TODO: Normal
-        return;
+        return 'Normal';
     }
     else if (userIMT >= 29.9) {
         // TODO: Kelebihan berat badan
-        return;
+        return 'Kelebihan berat badan';
     }
     else if (userIMT >= 30) {
         // TODO: Obesitas
-        return;
+        return 'Obesitas';
     }
     else {
         return;
