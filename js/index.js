@@ -2,7 +2,6 @@ import { HitungIMT, HitungHPL, HitungAMB } from '../js/HealthController.js';
 
 // ! IMT Logic
 
-let selectKelamin = document.getElementById("kelaminUser");
 let inputBerat = document.getElementById("beratUser");
 let inputTinggi = document.getElementById("tinggiUser");
 let btnSubmitIMT = document.getElementById("submitIMT");
