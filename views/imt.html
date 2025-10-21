@@ -18,12 +18,12 @@
     <header class="container">
         <nav class="grid-row">
             <div class="nav__logo col-2 col-xl-4 col-md-6">
-                <a href="/">
+                <a href="/index.html">
                     <h1>Sehat Plus</h1>
                 </a>
             </div>
             <div class="nav__content grid-row col-10 col-xl-8">
-                <a class="btn" href="/views/imt.html">IMT</a>
+                <a class="btn selected" href="/views/imt.html">IMT</a>
                 <a class="btn" href="/views/hpl.html">HPL</a>
                 <a class="btn" href="/views/amb.html">AMB</a>
             </div>
@@ -40,8 +40,20 @@
     <main>
         <section class="mbt-20">
             <div class="container text-center">
-                <h1>Selamat datang di aplikasi Sehat Plus!</h1>
-                <p>Disini kami menyediakan layanan AMT, HPL dan AMB.</p>
+                <form id="formIMT" action="">
+                    <label for="kelaminUser">Berat</label>
+                    <select name="kelamin" id="kelaminUser">
+                        <option value="" selected disabled hidden>Pilih kelamin anda:</option>
+                        <option value="laki">Laki - laki</option>
+                        <option value="wanita">Wanita</option>
+                    </select>
+                    <label for="beratUser">Berat</label>
+                    <input type="number" name="berat" id="beratUser">
+                    <label for="tinggiUser">Tinggi</label>
+                    <input type="number" name="tinggi" id="tinggiUser">
+                    <input type="submit" name="submit" id="submitIMT">
+                    <p id="outputIMT"></p>
+                </form>
             </div>
         </section>
     </main>
