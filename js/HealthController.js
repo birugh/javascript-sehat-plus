@@ -1,6 +1,7 @@
 // ! Proses perhitungan IMT
 
 export function HitungIMT(berat, tinggi) {
+    tinggi = (tinggi / 100).toFixed(2);
     let userIMT = berat / (tinggi * 2);
     let kategoriIMT;
     let saranIMT;
@@ -28,7 +29,7 @@ export function HitungIMT(berat, tinggi) {
         saranIMT = '-';
         kategoriIMT = 'Unknown';
     }
-    return { kategoriIMT, saranIMT };
+    return { userIMT, kategoriIMT, saranIMT };
 }
 
 // ! Proses perhitungan HPL

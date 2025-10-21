@@ -1,0 +1,56 @@
+.hidden {
+    display: none;
+}
+
+/* ! IMT */
+
+/* * Form IMT */
+#formIMT {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+#formIMT label {
+    font-size: 26px;
+}
+
+/* * Card IMT */
+
+.card__result {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+}
+
+.card__profile {
+    height: 240px;
+    margin-bottom: 64px;
+}
+
+.card__profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.form__header p,
+.card__information p {
+    font-size: 24px;
+}
+
+.form__header h2,
+.info__imt h2,
+.info__kategori h2 {
+    font-size: 48px;
+}
+
+.info__kategori p span {
+    font-weight: 600;
+}
+
+.card__information h2 {
+    margin-bottom: 24px;
+}
+
+.card__information h3 {
+    font-size: 32px;
+}

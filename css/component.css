@@ -2,7 +2,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 16px;
+    padding: 12px 18px;
     border-radius: 10px;
     font: inherit;
     cursor: pointer;
@@ -16,15 +16,27 @@
     color: #535353;
 }
 
+.btn--disabled {
+    background-color: var(--black_400);
+    color: var(--white);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    margin-right: 4px;
+}
+
+.btn--disabled:hover {
+    background-color: var(--black_500);
+    color: var(--white);
+}
+
 .btn--primary {
-    background-color: rgb(0, 223, 0);
+    background-color: var(--royal_blue_600);
     color: var(--white);
     transition: background-color 0.5s ease, color 0.5s ease;
     margin-right: 4px;
 }
 
 .btn--primary:hover {
-    background-color: rgb(0, 188, 0);
+    background-color: var(--royal_blue_800);
     color: var(--white);
 }
 
@@ -49,9 +61,11 @@ label {
 
 form select,
 form input {
-    border: 2px solid var(--off_black);
+    width: 100%;
+    border: 2px solid var(--black_300);
     border-radius: 6px;
     padding: 12px;
+    
 }
 
 table {

@@ -1184,3 +1184,13 @@
 .text-center {
     text-align: center;
 }
+
+.text-start {
+    text-align: start;
+}
+
+.wrapper {
+    /* position: relative;
+    margin: 0;
+    padding: 0; */
+}
