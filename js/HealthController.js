@@ -2,25 +2,33 @@
 
 export function HitungIMT(berat, tinggi) {
     let userIMT = berat / (tinggi * 2);
+    let kategoriIMT;
+    let saranIMT;
     if (userIMT <= 18.5) {
         // TODO: Kurus
-        return 'Kurus';
+        saranIMT = 'Perbanyak asupan gizi seimbang.';
+        kategoriIMT = 'Kurus';
     }
     else if (userIMT >= 24.9) {
         // TODO: Normal
-        return 'Normal';
+        saranIMT = 'Pertahankan pola makan sehat.';
+        kategoriIMT = 'Normal';
     }
     else if (userIMT >= 29.9) {
         // TODO: Kelebihan berat badan
-        return 'Kelebihan berat badan';
+        saranIMT = 'Mulai kendalikan pola makan dan tingkatkan aktivitas fisik agar berat badan kembali ideal.';
+        kategoriIMT = 'Kelebihan berat badan';
     }
     else if (userIMT >= 30) {
         // TODO: Obesitas
-        return 'Obesitas';
+        saranIMT = 'Kurangi makanan tinggi lemak dan rutin olahraga.';
+        kategoriIMT = 'Obesitas';
     }
     else {
-        return;
+        saranIMT = '-';
+        kategoriIMT = 'Unknown';
     }
+    return { kategoriIMT, saranIMT };
 }
 
 // ! Proses perhitungan HPL
