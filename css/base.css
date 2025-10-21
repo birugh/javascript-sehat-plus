@@ -1,16 +1,33 @@
 :root {
-    /* * White Colors */
+    /* * Primary Colors */
+    --royal_blu_-50: #ecf3ff;
+    --royal_blue_100: #dde8ff;
+    --royal_blue_200: #c2d5ff;
+    --royal_blue_300: #9cb7ff;
+    --royal_blue_400: #758fff;
+    --royal_blue_500: #576aff;
+    --royal_blue_600: #363df5;
+    --royal_blue_700: #2a2dd8;
+    --royal_blue_800: #252aae;
+    --royal_blue_900: #262c89;
+    --royal_blue_950: #161750;
+
+    /* * Black Colors */
+    --black_50: #f6f6f6;
+    --black_100: #e7e7e7;
+    --black_200: #d1d1d1;
+    --black_300: #b0b0b0;
+    --black_400: #888888;
+    --black_500: #6d6d6d;
+    --black_600: #5d5d5d;
+    --black_700: #4f4f4f;
+    --black_800: #454545;
+    --black_900: #3d3d3d;
+    --black_950: #000000;
+
+    /* * Base Colors */
     --white: #ffffff;
     --black: #000000;
-
-    /* * Dark Colors */
-    --black_knight: #020a0f;
-    --off_black: #303030;
-
-    /* * Gray Colors */
-    --dark_mineral: #505663;
-    --sleet: #888c95;
-    --coronation: #ececec;
 
     /* * Grid System */
     --columns: 12;

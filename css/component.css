@@ -88,6 +88,21 @@ nav {
     align-items: center;
 }
 
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn.selected {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--royal_blue_600);
+}
+
+.btn.selected:hover {
+    color: var(--royal_blue_900);
+}
+
 .nav__content {
     justify-content: flex-end;
 }
