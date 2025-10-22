@@ -34,9 +34,24 @@ function ResetIMT(params) {
 
 let labelRekomendasi = document.createElement('strong');
 
-if (formIMT && btnSubmitIMT && btnResetIMT) {
+
+if (formIMT && btnSubmitIMT && btnResetIMT && inputBeratIMT && inputTinggiIMT) {
     formIMT.addEventListener('submit', (e) => {
         e.preventDefault();
+    })
+    
+    inputBeratIMT.addEventListener('keydown', function (e) {
+        if (['e', 'E', '+', '-'].includes(e.key)) {
+            e.preventDefault();
+            return;
+        }
+    })
+    
+    inputTinggiIMT.addEventListener('keydown', function (e) {
+        if (['e', 'E', '+', '-'].includes(e.key)) {
+            e.preventDefault();
+            return;
+        }
     })
 
     btnResetIMT.addEventListener('click', () => {
@@ -52,6 +67,10 @@ if (formIMT && btnSubmitIMT && btnResetIMT) {
             alert("Tinggi badan harus berupa angka positif.");
             return;
         }
+
+        inputTinggiIMT.addEventListener('input', () => {
+
+        })
         const userIMT = HitungIMT(inputBeratIMT.value, inputTinggiIMT.value);
         console.log(inputBeratIMT.value + inputTinggiIMT.value);
 
@@ -81,23 +100,13 @@ let btnResetHPL = document.getElementById("resetHPL");
 let outputHPL = document.getElementById("outputHPL");
 let outputCardHPL = document.getElementById("card-output-hpl");
 
-const now = new Date();
-const tanggalNow = now.getDate();
-const bulanNow = now.getMonth();
-const tahunNow = now.getFullYear();
-let bulanStr;
-if (bulanNow < 10) {
-    bulanStr = `0${bulanNow}`
-}
-
-inputDateHPL.max = (`${tahunNow}-${bulanStr}-${tanggalNow}`);
 
 function ResetHPL() {
     inputDateHPL.value = '';
 
     outputHPL.innerHTML = '';
     outputCardHPL.classList.add('hidden');
-
+    
     btnSubmitHPL.classList.remove('disabled');
     btnSubmitHPL.classList.remove('btn--disabled');
     btnSubmitHPL.classList.add('btn--primary');
@@ -105,6 +114,18 @@ function ResetHPL() {
 }
 
 if (formHPL && btnSubmitHPL && btnResetHPL) {
+    const now = new Date();
+    const tanggalNow = now.getDate();
+    const bulanNow = now.getMonth();
+    const tahunNow = now.getFullYear();
+    let bulanStr;
+    if (bulanNow < 10) {
+        bulanStr = `0${bulanNow}`
+    }
+    
+    const getMaxDate = (`${tahunNow}-${bulanStr}-${tanggalNow}`)
+    
+    inputDateHPL.max = getMaxDate;
     formHPL.addEventListener('submit', (e) => {
         e.preventDefault();
     })
@@ -181,7 +202,7 @@ function ResetAMB() {
     btnSubmitAMB.removeAttribute('disabled');
 }
 
-if (formAMB && btnSubmitAMB && btnResetAMB) {
+if (formAMB && btnSubmitAMB && btnResetAMB && inputBeratAMB && inputTinggiAMB && inputUmurAMB) {
     formAMB.addEventListener('submit', (e) => {
         e.preventDefault();
     })
@@ -190,7 +211,30 @@ if (formAMB && btnSubmitAMB && btnResetAMB) {
         ResetAMB();
     })
 
+    inputBeratAMB.addEventListener('keydown', function (e) {
+        if (['e', 'E', '+', '-'].includes(e.key)) {
+            e.preventDefault();
+            return;
+        }
+    })
+
+    inputTinggiAMB.addEventListener('keydown', function (e) {
+        if (['e', 'E', '+', '-'].includes(e.key)) {
+            e.preventDefault();
+            return;
+        }
+    })
+
+    inputUmurAMB.addEventListener('keydown', function (e) {
+        if (['0', 'e', 'E', '+', '-'].includes(e.key)) {
+            e.preventDefault();
+            return;
+        }
+    })
+
     btnSubmitAMB.addEventListener('click', () => {
+        console.log('test');
+        
         if (!optionKelamin.value) {
             alert("Kelamin harus dipilih.");
             return;
