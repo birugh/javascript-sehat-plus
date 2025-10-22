@@ -57,7 +57,6 @@ if (formIMT && btnSubmitIMT && btnResetIMT) {
 
         // console.log(userIMT);
 
-
         btnSubmitIMT.setAttribute('disabled', 'disabled');
         btnSubmitIMT.classList.remove('btn--primary');
         btnSubmitIMT.classList.add('btn--disabled');
@@ -81,6 +80,17 @@ let btnSubmitHPL = document.getElementById("submitHPL");
 let btnResetHPL = document.getElementById("resetHPL");
 let outputHPL = document.getElementById("outputHPL");
 let outputCardHPL = document.getElementById("card-output-hpl");
+
+const now = new Date();
+const tanggalNow = now.getDate();
+const bulanNow = now.getMonth();
+const tahunNow = now.getFullYear();
+let bulanStr;
+if (bulanNow < 10) {
+    bulanStr = `0${bulanNow}`
+}
+
+inputDateHPL.max = (`${tahunNow}-${bulanStr}-${tanggalNow}`);
 
 function ResetHPL() {
     inputDateHPL.value = '';
@@ -113,7 +123,7 @@ if (formHPL && btnSubmitHPL && btnResetHPL) {
         if (dateSelected > now) {
             alert("Tanggal HPHT tidak boleh di masa depan.");
             return;
-    }
+        }
         if (dateSelected.getFullYear() < 1900) {
             alert("Tanggal HPHT tidak boleh sebelum tahun 1900.");
             return;
