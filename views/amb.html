@@ -39,23 +39,94 @@
 
     <main>
         <section class="mbt-20">
-            <div class="container text-center">
-                <form id="formAMB" action="">
-                    <label for="kelaminUserAMB">Kelamin</label>
-                    <select name="kelamin" id="kelaminUserAMB">
-                        <option value="" selected disabled hidden>Pilih kelamin anda:</option>
-                        <option value="pria">Pria</option>
-                        <option value="wanita">Wanita</option>
-                    </select>
-                    <label for="beratUserAMB">Berat</label>
-                    <input type="number" name="berat" id="beratUserAMB">
-                    <label for="tinggiUserAMB">Tinggi</label>
-                    <input type="number" name="tinggi" id="tinggiUserAMB">
-                    <label for="umurUserAMB">Umur</label>
-                    <input type="number" name="tinggi" id="umurUserAMB">
-                    <input type="submit" name="submit" id="submitAMB">
-                    <p id="outputAMB"></p>
-                </form>
+            <div class="container">
+                <div class="grid-row">
+                    <div class="col-6 col-md-12">
+                        <form id="formAMB" action="">
+                            <div class="wrapper p-6">
+                                <div class="grid-row">
+                                    <div class="form__header col-12">
+                                        <h2 class="mb-2">AMB Kalkulator</h2>
+                                        <p class="mb-4">Hitung Angka Metabolisme Basal (AMB) Anda untuk mengetahui
+                                            jumlah kalori yang dibutuhkan tubuh dalam keadaan istirahat. Masukkan data
+                                            dengan akurat.</p>
+                                    </div>
+                                    <div class="kelamin col-12 mb-2 text-start">
+                                        <label for="kelaminUserAMB">Kelamin</label><br>
+                                        <select name="kelamin" id="kelaminUserAMB" class="mt-1">
+                                            <option value="" selected disabled hidden>Pilih kelamin anda:</option>
+                                            <option value="pria">Pria</option>
+                                            <option value="wanita">Wanita</option>
+                                        </select>
+                                    </div>
+                                    <div class="berat col-12 mb-2 text-start">
+                                        <label for="beratUserAMB">Berat</label><br>
+                                        <input type="number" name="berat" id="beratUserAMB" class="mt-1">
+                                    </div>
+                                    <div class="tinggi col-12 mb-2 text-start">
+                                        <label for="tinggiUserAMB">Tinggi</label><br>
+                                        <input type="number" name="tinggi" id="tinggiUserAMB" class="mt-1">
+                                    </div>
+                                    <div class="umur col-12 mb-2 text-start">
+                                        <label for="umurUserAMB">Umur</label><br>
+                                        <input type="number" name="umur" id="umurUserAMB" class="mt-1">
+                                    </div>
+                                    <div class="cta col-12">
+                                        <input type="submit" name="submit" id="submitAMB" class="btn btn--primary mb-1">
+                                        <input type="reset" name="reset" id="resetAMB" class="btn btn--secondary">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-6 col-md-12">
+                        <div class="card__info p-6">
+                            <h3>Apa itu AMB?</h3>
+                            <p>AMB (Angka Metabolisme Basal) adalah jumlah kalori minimum yang dibutuhkan tubuh untuk
+                                menjalankan fungsi vital saat istirahat. Rumus Mifflin-St Jeor: Pria: 10*berat +
+                                6.25*tinggi - 5*umur + 5; Wanita: 10*berat + 6.25*tinggi - 5*umur - 161.</p>
+                            <h4>Cara Menggunakan:</h4>
+                            <ul>
+                                <li>Pilih kelamin, masukkan berat (kg), tinggi (cm), dan umur (tahun).</li>
+                                <li>Klik hitung untuk mendapatkan AMB harian.</li>
+                                <li>Gunakan sebagai dasar untuk menentukan kebutuhan kalori.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12">
+                        <div id="card-output-amb" class="card__result p-12 mbt-12 hidden">
+                            <div class="grid-row">
+                                <div class="card__profile col-12">
+                                    <img src="/assets/user_pfp.svg" alt="Profile User">
+                                </div>
+                                <div class="col-12">
+                                    <div class="card__information grid-row no-gutter">
+                                        <div class="info__kelamin col-6 col-md-12 text-center">
+                                            <p>Kelamin:</p>
+                                            <h2 id="outputKelaminAMB"></h2>
+                                        </div>
+                                        <div class="info__berat col-6 col-md-12 text-center">
+                                            <p>Berat (kg):</p>
+                                            <h2 id="outputBeratAMB"></h2>
+                                        </div>
+                                        <div class="info__tinggi col-12 text-center">
+                                            <p>Tinggi (cm):</p>
+                                            <h2 id="outputTinggiAMB"></h2>
+                                        </div>
+                                        <div class="info__umur col-12 text-center">
+                                            <p>Umur (tahun):</p>
+                                            <h2 id="outputUmurAMB"></h2>
+                                        </div>
+                                        <div class="info__amb col-12 text-center">
+                                            <p>Angka Metabolisme Basal (AMB):</p>
+                                            <h2 id="outputAMB"></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

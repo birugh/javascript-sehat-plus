@@ -5,21 +5,19 @@
 /* ! IMT */
 
 /* * Form IMT */
-#formIMT {
+form,
+.card__info,
+.card__result {
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
-#formIMT label {
+
+form label {
     font-size: 26px;
 }
 
 /* * Card IMT */
-
-.card__result {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    background-color: #fff;
-}
 
 .card__profile {
     height: 240px;
@@ -54,3 +52,23 @@
 .card__information h3 {
     font-size: 32px;
 }
+
+.card__info h3 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.card__info p {
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.card__info li {
+    line-height: 1.5;
+}
+
+.card__info h4 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+

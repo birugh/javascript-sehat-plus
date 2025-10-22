@@ -29,6 +29,7 @@ function ResetIMT(params) {
     btnSubmitIMT.classList.remove('disabled');
     btnSubmitIMT.classList.remove('btn--disabled');
     btnSubmitIMT.classList.add('btn--primary');
+    btnSubmitIMT.removeAttribute('disabled');
 }
 
 let labelRekomendasi = document.createElement('strong');
@@ -43,12 +44,20 @@ if (formIMT && btnSubmitIMT && btnResetIMT) {
     })
 
     btnSubmitIMT.addEventListener('click', () => {
+        if (!inputBeratIMT.value || isNaN(inputBeratIMT.value) || parseFloat(inputBeratIMT.value) <= 0) {
+            alert("Berat badan harus berupa angka positif.");
+            return;
+        }
+        if (!inputTinggiIMT.value || isNaN(inputTinggiIMT.value) || parseFloat(inputTinggiIMT.value) <= 0) {
+            alert("Tinggi badan harus berupa angka positif.");
+            return;
+        }
         const userIMT = HitungIMT(inputBeratIMT.value, inputTinggiIMT.value);
         console.log(inputBeratIMT.value + inputTinggiIMT.value);
-        
+
         // console.log(userIMT);
 
-        
+
         btnSubmitIMT.setAttribute('disabled', 'disabled');
         btnSubmitIMT.classList.remove('btn--primary');
         btnSubmitIMT.classList.add('btn--disabled');
@@ -69,26 +78,60 @@ if (formIMT && btnSubmitIMT && btnResetIMT) {
 let inputDateHPL = document.getElementById("dateUser");
 let formHPL = document.getElementById("formHPL");
 let btnSubmitHPL = document.getElementById("submitHPL");
+let btnResetHPL = document.getElementById("resetHPL");
+let outputHPL = document.getElementById("outputHPL");
+let outputCardHPL = document.getElementById("card-output-hpl");
 
+function ResetHPL() {
+    inputDateHPL.value = '';
 
+    outputHPL.innerHTML = '';
+    outputCardHPL.classList.add('hidden');
 
-if (formHPL) {
+    btnSubmitHPL.classList.remove('disabled');
+    btnSubmitHPL.classList.remove('btn--disabled');
+    btnSubmitHPL.classList.add('btn--primary');
+    btnSubmitHPL.removeAttribute('disabled');
+}
+
+if (formHPL && btnSubmitHPL && btnResetHPL) {
     formHPL.addEventListener('submit', (e) => {
         e.preventDefault();
     })
 
+    btnResetHPL.addEventListener('click', () => {
+        ResetHPL();
+    })
+
     btnSubmitHPL.addEventListener('click', () => {
-        const dateSelected = new Date(inputDateHPL.value)
+        if (!inputDateHPL.value) {
+            alert("Tanggal harus dipilih.");
+            return;
+        }
+        const dateSelected = new Date(inputDateHPL.value);
+        const now = new Date();
+        if (dateSelected > now) {
+            alert("Tanggal HPHT tidak boleh di masa depan.");
+            return;
+    }
+        if (dateSelected.getFullYear() < 1900) {
+            alert("Tanggal HPHT tidak boleh sebelum tahun 1900.");
+            return;
+        }
         const tanggal = dateSelected.getDate();
-        const bulan = dateSelected.getMonth() + 1;
+        const bulan = dateSelected.getMonth();
         const tahun = dateSelected.getFullYear();
 
         const dateHPL = HitungHPL(tanggal, bulan, tahun);
 
         console.log(dateHPL);
 
-
-        // console.log(`${tanggal} + ${bulan} + ${tahun}`);
+        btnSubmitHPL.setAttribute('disabled', 'disabled');
+        btnSubmitHPL.classList.remove('btn--primary');
+        btnSubmitHPL.classList.add('btn--disabled');
+        outputCardHPL.classList.remove('hidden');
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        outputHPL.innerHTML = dateHPL.toLocaleDateString('id-ID', options);
     })
 }
 
@@ -100,14 +143,60 @@ let inputTinggiAMB = document.getElementById("tinggiUserAMB");
 let inputUmurAMB = document.getElementById("umurUserAMB");
 let formAMB = document.getElementById("formAMB");
 let btnSubmitAMB = document.getElementById("submitAMB");
+let btnResetAMB = document.getElementById("resetAMB");
 
+let outputKelaminAMB = document.getElementById("outputKelaminAMB");
+let outputBeratAMB = document.getElementById("outputBeratAMB");
+let outputTinggiAMB = document.getElementById("outputTinggiAMB");
+let outputUmurAMB = document.getElementById("outputUmurAMB");
+let outputAMB = document.getElementById("outputAMB");
+let outputCardAMB = document.getElementById("card-output-amb");
 
-if (formAMB) {
+function ResetAMB() {
+    optionKelamin.selectedIndex = 0;
+    inputBeratAMB.value = '';
+    inputTinggiAMB.value = '';
+    inputUmurAMB.value = '';
+
+    outputKelaminAMB.innerHTML = '';
+    outputBeratAMB.innerHTML = '';
+    outputTinggiAMB.innerHTML = '';
+    outputUmurAMB.innerHTML = '';
+    outputAMB.innerHTML = '';
+    outputCardAMB.classList.add('hidden');
+
+    btnSubmitAMB.classList.remove('disabled');
+    btnSubmitAMB.classList.remove('btn--disabled');
+    btnSubmitAMB.classList.add('btn--primary');
+    btnSubmitAMB.removeAttribute('disabled');
+}
+
+if (formAMB && btnSubmitAMB && btnResetAMB) {
     formAMB.addEventListener('submit', (e) => {
         e.preventDefault();
     })
 
+    btnResetAMB.addEventListener('click', () => {
+        ResetAMB();
+    })
+
     btnSubmitAMB.addEventListener('click', () => {
+        if (!optionKelamin.value) {
+            alert("Kelamin harus dipilih.");
+            return;
+        }
+        if (!inputBeratAMB.value || isNaN(inputBeratAMB.value) || parseFloat(inputBeratAMB.value) <= 0) {
+            alert("Berat badan harus berupa angka positif.");
+            return;
+        }
+        if (!inputTinggiAMB.value || isNaN(inputTinggiAMB.value) || parseFloat(inputTinggiAMB.value) <= 0) {
+            alert("Tinggi badan harus berupa angka positif.");
+            return;
+        }
+        if (!inputUmurAMB.value || isNaN(inputUmurAMB.value) || parseFloat(inputUmurAMB.value) <= 0) {
+            alert("Umur harus berupa angka positif.");
+            return;
+        }
         const kelamin = optionKelamin.value;
         const berat = inputBeratAMB.value;
         const tinggi = inputTinggiAMB.value;
@@ -117,5 +206,14 @@ if (formAMB) {
 
         console.log(caloryUser);
 
+        btnSubmitAMB.setAttribute('disabled', 'disabled');
+        btnSubmitAMB.classList.remove('btn--primary');
+        btnSubmitAMB.classList.add('btn--disabled');
+        outputCardAMB.classList.remove('hidden');
+        outputKelaminAMB.innerHTML = kelamin.charAt(0).toUpperCase() + kelamin.slice(1);
+        outputBeratAMB.innerHTML = berat;
+        outputTinggiAMB.innerHTML = tinggi;
+        outputUmurAMB.innerHTML = umur;
+        outputAMB.innerHTML = caloryUser.toFixed(2) + ' kalori/hari';
     })
 }

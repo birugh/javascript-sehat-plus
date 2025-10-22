@@ -39,54 +39,71 @@
 
     <main>
         <section class="mbt-20">
-            <div class="container text-center">
-                <form id="formIMT" action="">
-                    <div class="wrapper p-6">
-                        <div class="grid-row">
-                            <div class="form__header col-12">
-                                <h2 class="mb-2">IMT Kalkulator</h2>
-                                <p class="mb-4">Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di IMT Kalkulator.</p>
+            <div class="container">
+                <div class="grid-row">
+                    <div class="col-6 col-md-12">
+                        <form id="formIMT" action="">
+                            <div class="wrapper p-6">
+                                <div class="grid-row">
+                                    <div class="form__header col-12">
+                                        <h2 class="mb-2">IMT Kalkulator</h2>
+                                        <p class="mb-4">Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di IMT Kalkulator.</p>
+                                    </div>
+                                    <div class="berat col-12 mb-2 text-start">
+                                        <label for="beratUserIMT">Berat</label><br>
+                                        <input type="number" name="berat" id="beratUserIMT" class="mt-1">
+                                    </div>
+                                    <div class="tinggi col-12 mb-2 text-start">
+                                        <label for="tinggiUserIMT">Tinggi</label><br>
+                                        <input type="number" name="tinggi" id="tinggiUserIMT" class="mt-1">
+                                    </div>
+                                    <div class="cta col-12">
+                                        <input type="submit" name="submit" id="submitIMT" class="btn btn--primary mb-1">
+                                        <input type="reset" name="submit" id="resetIMT" class="btn btn--secondary">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="berat col-12 mb-2 text-start">
-                                <label for="beratUserIMT">Berat</label><br>
-                                <input type="number" name="berat" id="beratUserIMT" class="mt-1">
-                            </div>
-                            <div class="tinggi col-12 mb-2 text-start">
-                                <label for="tinggiUserIMT">Tinggi</label><br>
-                                <input type="number" name="tinggi" id="tinggiUserIMT" class="mt-1">
-                            </div>
-                            <div class="cta col-12">
-                                <input type="submit" name="submit" id="submitIMT" class="btn btn--primary mb-1">
-                                <input type="reset" name="submit" id="resetIMT" class="btn btn--secondary">
+                        </form>
+                        <div id="card-output" class="card__result p-12 mbt-12 hidden">
+                            <div class="grid-row">
+                                <div class="card__profile col-12">
+                                    <img src="/assets/user_pfp.svg" alt="Profile User">
+                                </div>
+                                <div class="col-12">
+                                    <div class="card__information grid-row no-gutter">
+                                        <div class="info__berat col-6 col-md-12 text-center">
+                                            <p>Berat (kg):</p>
+                                            <h2 id="outputBeratIMT">32</h2>
+                                        </div>
+                                        <div class="info__tinggi col-6 col-md-12 text-center">
+                                            <p>Tinggi (cm):</p>
+                                            <h2 id="outputTinggiIMT">170</h2>
+                                        </div>
+                                        <div class="info__imt col-12 text-center">
+                                            <p>Hasil IMT Anda:</p>
+                                            <h2 id="outputHasilIMT">24.9</h2>
+                                        </div>
+                                        <div class="info__kategori col-12 text-center">
+                                            <p>Kategori</p>
+                                            <h2 id="outputKategoriIMT">Kurus</h2>
+                                            <p id="outputSaranIMT" class="text-start"></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </form>
-                <div id="card-output" class="card__result p-12 mbt-12 hidden">
-                    <div class="grid-row">
-                        <div class="card__profile col-12">
-                            <img src="/assets/user_pfp.svg" alt="Profile User">
-                        </div>
-                        <div class="col-12">
-                            <div class="card__information grid-row no-gutter">
-                                <div class="info__berat col-6 col-md-12 text-center">
-                                    <p>Berat (kg):</p>
-                                    <h2 id="outputBeratIMT">32</h2>
-                                </div>
-                                <div class="info__tinggi col-6 col-md-12 text-center">
-                                    <p>Tinggi (cm):</p>
-                                    <h2 id="outputTinggiIMT">170</h2>
-                                </div>
-                                <div class="info__imt col-12 text-center">
-                                    <p>Hasil IMT Anda:</p>
-                                    <h2 id="outputHasilIMT">24.9</h2>
-                                </div>
-                                <div class="info__kategori col-12 text-center">
-                                    <p>Kategori</p>
-                                    <h2 id="outputKategoriIMT">Kurus</h2>
-                                    <p id="outputSaranIMT" class="text-start"></p>
-                                </div>
-                            </div>
+                    <div class="col-6 col-md-12">
+                        <div class="card__info p-6">
+                            <h3>Apa itu IMT?</h3>
+                            <p>IMT (Indeks Massa Tubuh) adalah ukuran yang digunakan untuk menilai apakah berat badan seseorang ideal atau tidak. IMT dihitung dengan rumus: Berat (kg) / (Tinggi (m))^2.</p>
+                            <h4>Kategori IMT:</h4>
+                            <ul>
+                                <li><strong>Kurus:</strong> < 18.5</li>
+                                <li><strong>Normal:</strong> 18.5 - 24.9</li>
+                                <li><strong>Kelebihan berat badan:</strong> 25.0 - 29.9</li>
+                                <li><strong>Obesitas:</strong> ≥ 30</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

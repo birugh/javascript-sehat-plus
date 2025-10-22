@@ -51,7 +51,7 @@ Pria: AMB = (10 × berat) + (6.25 × tinggi) - (5 × umur) + 5
 Wanita: AMB = (10 × berat) + (6.25 × tinggi) - (5 × umur) - 161
 
 Output yang Diharapkan:
-- Nilai total kebutuhan kalori dasar harian (dalam kilokalori)
+- Nilai total kebutuhan kalori dasar harian (dalam kilokalori) kcal/hari || hari
 
 referensinya bisa dari sini ya
 - HPL
