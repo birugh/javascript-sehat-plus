@@ -60,7 +60,23 @@ if (formIMT && btnSubmitIMT && btnResetIMT && inputBeratIMT && inputTinggiIMT) {
         ResetIMT();
     })
 
+
+    inputBeratIMT.addEventListener('input', () => {
+        btnSubmitIMT.classList.remove('disabled');
+        btnSubmitIMT.classList.remove('btn--disabled');
+        btnSubmitIMT.classList.add('btn--primary');
+        btnSubmitIMT.removeAttribute('disabled');
+    });
+
+    inputTinggiIMT.addEventListener('input', () => {
+        btnSubmitIMT.classList.remove('disabled');
+        btnSubmitIMT.classList.remove('btn--disabled');
+        btnSubmitIMT.classList.add('btn--primary');
+        btnSubmitIMT.removeAttribute('disabled');
+    });
+
     btnSubmitIMT.addEventListener('click', () => {
+        outputSaranIMT.innerHTML = ''
         if (!inputBeratIMT.value || isNaN(inputBeratIMT.value) || parseFloat(inputBeratIMT.value) <= 0) {
             alert("Berat badan harus berupa angka positif.");
             return;
@@ -139,6 +155,11 @@ if (formHPL && btnSubmitHPL && btnResetHPL && inputDateHPL) {
             input.dataset.bulan = bulan
             input.dataset.tahun = tahun
             input.dataset.fullDate = input.value
+
+            btnSubmitHPL.classList.remove('disabled');
+            btnSubmitHPL.classList.remove('btn--disabled');
+            btnSubmitHPL.classList.add('btn--primary');
+            btnSubmitHPL.removeAttribute('disabled');
         },
     })
 
@@ -162,6 +183,13 @@ if (formHPL && btnSubmitHPL && btnResetHPL && inputDateHPL) {
     btnResetHPL.addEventListener('click', () => {
         ResetHPL();
     })
+
+    // inputDateHPL.addEventListener('onMonthChange', () => {
+    //     btnSubmitAMB.classList.remove('disabled');
+    //     btnSubmitAMB.classList.remove('btn--disabled');
+    //     btnSubmitAMB.classList.add('btn--primary');
+    //     btnSubmitAMB.removeAttribute('disabled');
+    // })
 
     btnSubmitHPL.addEventListener('click', () => {
         if (!inputDateHPL.value) {
@@ -262,6 +290,34 @@ if (formAMB && btnSubmitAMB && btnResetAMB && inputBeratAMB && inputTinggiAMB &&
         }
     })
 
+    optionKelamin.addEventListener('input', () => {
+        btnSubmitAMB.classList.remove('disabled');
+        btnSubmitAMB.classList.remove('btn--disabled');
+        btnSubmitAMB.classList.add('btn--primary');
+        btnSubmitAMB.removeAttribute('disabled');
+    });
+
+    inputBeratAMB.addEventListener('input', () => {
+        btnSubmitAMB.classList.remove('disabled');
+        btnSubmitAMB.classList.remove('btn--disabled');
+        btnSubmitAMB.classList.add('btn--primary');
+        btnSubmitAMB.removeAttribute('disabled');
+    });
+
+    inputTinggiAMB.addEventListener('input', () => {
+        btnSubmitAMB.classList.remove('disabled');
+        btnSubmitAMB.classList.remove('btn--disabled');
+        btnSubmitAMB.classList.add('btn--primary');
+        btnSubmitAMB.removeAttribute('disabled');
+    });
+
+    inputUmurAMB.addEventListener('input', () => {
+        btnSubmitAMB.classList.remove('disabled');
+        btnSubmitAMB.classList.remove('btn--disabled');
+        btnSubmitAMB.classList.add('btn--primary');
+        btnSubmitAMB.removeAttribute('disabled');
+    });
+
     btnSubmitAMB.addEventListener('click', () => {
         console.log('test');
 
@@ -299,5 +355,13 @@ if (formAMB && btnSubmitAMB && btnResetAMB && inputBeratAMB && inputTinggiAMB &&
         outputTinggiAMB.innerHTML = tinggi;
         outputUmurAMB.innerHTML = umur;
         outputAMB.innerHTML = caloryUser.toFixed(2) + ' kalori/hari';
+
+        // Change image based on gender
+        const profileImage = document.getElementById('profileImage');
+        if (kelamin === 'wanita') {
+            profileImage.src = 'https://via.placeholder.com/150?text=Wanita';
+        } else {
+            profileImage.src = '../assets/user_pfp.svg';
+        }
     })
 }
