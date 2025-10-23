@@ -1,4 +1,6 @@
+// import datepicker from 'js-datepicker';
 import { HitungIMT, HitungHPL, HitungAMB } from '../js/HealthController.js';
+// import datepicker from 'js-datepicker'
 
 // ! IMT Logic
 
@@ -39,14 +41,14 @@ if (formIMT && btnSubmitIMT && btnResetIMT && inputBeratIMT && inputTinggiIMT) {
     formIMT.addEventListener('submit', (e) => {
         e.preventDefault();
     })
-    
+
     inputBeratIMT.addEventListener('keydown', function (e) {
         if (['e', 'E', '+', '-'].includes(e.key)) {
             e.preventDefault();
             return;
         }
     })
-    
+
     inputTinggiIMT.addEventListener('keydown', function (e) {
         if (['e', 'E', '+', '-'].includes(e.key)) {
             e.preventDefault();
@@ -100,32 +102,59 @@ let btnResetHPL = document.getElementById("resetHPL");
 let outputHPL = document.getElementById("outputHPL");
 let outputCardHPL = document.getElementById("card-output-hpl");
 
-
 function ResetHPL() {
     inputDateHPL.value = '';
 
     outputHPL.innerHTML = '';
     outputCardHPL.classList.add('hidden');
-    
+
     btnSubmitHPL.classList.remove('disabled');
     btnSubmitHPL.classList.remove('btn--disabled');
     btnSubmitHPL.classList.add('btn--primary');
     btnSubmitHPL.removeAttribute('disabled');
 }
 
-if (formHPL && btnSubmitHPL && btnResetHPL) {
-    const now = new Date();
-    const tanggalNow = now.getDate();
-    const bulanNow = now.getMonth();
-    const tahunNow = now.getFullYear();
-    let bulanStr;
-    if (bulanNow < 10) {
-        bulanStr = `0${bulanNow}`
-    }
-    
-    const getMaxDate = (`${tahunNow}-${bulanStr}-${tanggalNow}`)
-    
-    inputDateHPL.max = getMaxDate;
+if (formHPL && btnSubmitHPL && btnResetHPL && inputDateHPL) {
+    const today = new Date()
+
+    const picker = datepicker('#dateUser', {
+        startDay: 1,
+        maxDate: today,
+        customDays: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
+        customMonths: [
+            'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+            'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+        ],
+
+        formatter: (input, date) => {
+            const hari = date.toLocaleDateString('id-ID', { weekday: 'long' })
+            const bulanText = date.toLocaleDateString('id-ID', { month: 'long' })
+            const tanggal = date.getDate()
+            const bulan = date.getMonth() + 1
+            const tahun = date.getFullYear()
+
+            input.value = `${hari}, ${bulanText} ${tanggal}, ${tahun}`
+
+            input.dataset.tanggal = tanggal
+            input.dataset.bulan = bulan
+            input.dataset.tahun = tahun
+            input.dataset.fullDate = input.value
+        },
+    })
+
+    // const now = new Date();
+    // const tanggalNow = now.getDate();
+    // const bulanNow = now.getMonth();
+    // const tahunNow = now.getFullYear();
+    // let bulanStr;
+    // if (bulanNow < 10) {
+    //     bulanStr = `0${bulanNow}`
+    // }
+
+    // const getMaxDate = (`${tahunNow}-${bulanStr}-${tanggalNow}`)
+
+    // inputDateHPL.max = getMaxDate;
+
     formHPL.addEventListener('submit', (e) => {
         e.preventDefault();
     })
@@ -141,6 +170,10 @@ if (formHPL && btnSubmitHPL && btnResetHPL) {
         }
         const dateSelected = new Date(inputDateHPL.value);
         const now = new Date();
+        const tanggal = inputDateHPL.dataset.tanggal;
+        const bulan = inputDateHPL.dataset.bulan;
+        const tahun = inputDateHPL.dataset.tahun;
+
         if (dateSelected > now) {
             alert("Tanggal HPHT tidak boleh di masa depan.");
             return;
@@ -149,9 +182,6 @@ if (formHPL && btnSubmitHPL && btnResetHPL) {
             alert("Tanggal HPHT tidak boleh sebelum tahun 1900.");
             return;
         }
-        const tanggal = dateSelected.getDate();
-        const bulan = dateSelected.getMonth();
-        const tahun = dateSelected.getFullYear();
 
         const dateHPL = HitungHPL(tanggal, bulan, tahun);
 
@@ -234,7 +264,7 @@ if (formAMB && btnSubmitAMB && btnResetAMB && inputBeratAMB && inputTinggiAMB &&
 
     btnSubmitAMB.addEventListener('click', () => {
         console.log('test');
-        
+
         if (!optionKelamin.value) {
             alert("Kelamin harus dipilih.");
             return;

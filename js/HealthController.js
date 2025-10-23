@@ -30,7 +30,7 @@ export function HitungHPL(tanggal, bulan, tahun) {
     let dateNow = new Date(tahun, bulan, tanggal);
 
     dateNow.setDate(dateNow.getDate() + 7);
-    dateNow.setMonth(dateNow.getMonth() - 3);
+    dateNow.setMonth(dateNow.getMonth() - 4);
     dateNow.setFullYear(dateNow.getFullYear() + 1);
     return dateNow;
 }

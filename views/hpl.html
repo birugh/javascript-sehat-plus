@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../css/utilities.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/resp.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css"> -->
+      <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+  <script src="https://unpkg.com/js-datepicker"></script>
 </head>
 
 <body>
@@ -53,7 +56,7 @@
                                     </div>
                                     <div class="tanggal col-12 mb-2 text-start">
                                         <label for="dateUser">Hari Pertama Haid Terakhir</label><br>
-                                        <input type="date" name="date" id="dateUser" class="mt-1">
+                                        <input id="dateUser" placeholder="Klik untuk pilih tanggal"/>
                                     </div>
                                     <div class="cta col-12">
                                         <input type="submit" name="submit" id="submitHPL" class="btn btn--primary mb-1">
@@ -98,6 +101,8 @@
         </section>
     </main>
     <script type="module" src="../js/index.js"></script>
+    <!-- <script src="https://unpkg.com/js-datepicker/dist/datepicker.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/js-datepicker"></script> -->
 </body>
 
 </html>
