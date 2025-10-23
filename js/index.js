@@ -284,7 +284,7 @@ if (formAMB && btnSubmitAMB && btnResetAMB && inputBeratAMB && inputTinggiAMB &&
     })
 
     inputUmurAMB.addEventListener('keydown', function (e) {
-        if (['', 'e', 'E', '+', '-'].includes(e.key)) {
+        if (['e', 'E', '+', '-'].includes(e.key)) {
             e.preventDefault();
             return;
         }
