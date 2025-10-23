@@ -17,7 +17,7 @@
 <body>
     <header class="container">
         <nav class="grid-row">
-            <div class="nav__logo col-2 col-xl-4 col-md-6">
+            <div class="nav__logo col-2 col-xl-4 col-md-4">
                 <a href="../index.html">
                     <h1>Sehat Plus</h1>
                 </a>
@@ -47,15 +47,25 @@
                                 <div class="grid-row">
                                     <div class="form__header col-12">
                                         <h2 class="mb-2">IMT Kalkulator</h2>
-                                        <p class="mb-4">Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di IMT Kalkulator.</p>
+                                        <p class="mb-4">Berat badan ideal adalah impian semua orang. Tidak hanya
+                                            memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga
+                                            menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung
+                                            sekarang di IMT Kalkulator.</p>
                                     </div>
                                     <div class="berat col-12 mb-2 text-start">
-                                        <label for="beratUserIMT">Berat (kg)</label><br>
-                                        <input type="number" name="berat" id="beratUserIMT" class="mt-1">
+                                        <label for="beratUserIMT">Berat</label><br>
+                                        <div class="input-group mt-1">
+                                            <input type="number" name="berat" id="beratUserIMT">
+                                            <span>kg</span>
+                                        </div>
                                     </div>
                                     <div class="tinggi col-12 mb-2 text-start">
-                                        <label for="tinggiUserIMT">Tinggi (cm)</label><br>
-                                        <input type="number" name="tinggi" id="tinggiUserIMT" class="mt-1">
+                                        <label for="tinggiUserIMT">Tinggi</label><br>
+                                        <div class="input-group mt-1">
+                                            <input type="number" name="tinggi" id="tinggiUserIMT" >
+                                            <span>cm</span>
+                                        </div>
+
                                     </div>
                                     <div class="cta col-12">
                                         <input type="submit" name="submit" id="submitIMT" class="btn btn--primary mb-1">
@@ -68,10 +78,12 @@
                     <div class="col-6 col-md-12">
                         <div class="card__info p-6">
                             <h3>Apa itu IMT?</h3>
-                            <p>IMT (Indeks Massa Tubuh) adalah ukuran yang digunakan untuk menilai apakah berat badan seseorang ideal atau tidak. IMT dihitung dengan rumus: Berat (kg) / (Tinggi (m))^2.</p>
+                            <p>IMT (Indeks Massa Tubuh) adalah ukuran yang digunakan untuk menilai apakah berat badan
+                                seseorang ideal atau tidak. IMT dihitung dengan rumus: Berat (kg) / (Tinggi (m))^2.</p>
                             <h4>Kategori IMT:</h4>
                             <ul>
-                                <li><strong>Kurus:</strong> < 18.5</li>
+                                <li><strong>Kurus:</strong>
+                                    < 18.5</li>
                                 <li><strong>Normal:</strong> 18.5 - 24.9</li>
                                 <li><strong>Kelebihan berat badan:</strong> 25.0 - 29.9</li>
                                 <li><strong>Obesitas:</strong> ≥ 30</li>

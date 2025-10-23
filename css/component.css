@@ -65,7 +65,7 @@ form input {
     border: 2px solid var(--black_300);
     border-radius: 6px;
     padding: 12px;
-    
+
 }
 
 table {
@@ -145,4 +145,47 @@ nav a {
     height: 3px;
     background-color: var(--off_black);
     border-radius: 2px;
+}
+
+.input-group {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.input-group span,
+.input-group button {
+    background: #e0e0e0;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-right: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    width: 100%;
+    border: 2px solid var(--black_300);
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.input-group input:first-child,
+.input-group span:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.input-group input:last-child,
+.input-group button:last-child {
+    border-radius: 0 4px 4px 0;
+    border-right: 1px solid #ccc;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
 }

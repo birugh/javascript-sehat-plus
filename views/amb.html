@@ -15,17 +15,17 @@
 </head>
 
 <body>
-    <header class="container">
+<header class="container">
         <nav class="grid-row">
-            <div class="nav__logo col-2 col-xl-4 col-md-6">
+            <div class="nav__logo col-2 col-xl-4 col-md-4">
                 <a href="../index.html">
                     <h1>Sehat Plus</h1>
                 </a>
             </div>
             <div class="nav__content grid-row col-10 col-xl-8">
-                <a class="btn" href="../views/imt.html">IMT</a>
+                <a class="btn selected" href="../views/imt.html">IMT</a>
                 <a class="btn" href="../views/hpl.html">HPL</a>
-                <a class="btn selected" href="../views/amb.html">AMB</a>
+                <a class="btn" href="../views/amb.html">AMB</a>
             </div>
             <div class="col-6 nav__mobile col-xxl-1 col-md-6">
                 <div class="hamburger__menu">
@@ -60,12 +60,18 @@
                                         </select>
                                     </div>
                                     <div class="berat col-12 mb-2 text-start">
-                                        <label for="beratUserAMB">Berat (kg)</label><br>
-                                        <input type="number" name="berat" id="beratUserAMB" class="mt-1">
+                                        <label for="beratUserAMB">Berat</label><br>
+                                        <div class="input-group mt-1">
+                                            <input type="number" name="berat" id="beratUserAMB">
+                                            <span>kg</span>
+                                        </div>
                                     </div>
                                     <div class="tinggi col-12 mb-2 text-start">
-                                        <label for="tinggiUserAMB">Tinggi (cm)</label><br>
-                                        <input type="number" name="tinggi" id="tinggiUserAMB" class="mt-1">
+                                        <label for="tinggiUserAMB">Tinggi</label><br>
+                                        <div class="input-group mt-1">
+                                            <input type="number" name="tinggi" id="tinggiUserAMB">
+                                            <span>cm</span>
+                                        </div>
                                     </div>
                                     <div class="umur col-12 mb-2 text-start">
                                         <label for="umurUserAMB">Umur</label><br>
@@ -97,7 +103,7 @@
                         <div id="card-output-amb" class="card__result p-12 mbt-12 hidden">
                             <div class="grid-row">
                                 <div class="card__profile col-12">
-                                    <img src="../assets/user_pfp.svg" alt="Profile User">
+                                    <img src="../assets/user_pfp.svg" id="profileImage" alt="Profile User">
                                 </div>
                                 <div class="col-12">
                                     <div class="card__information grid-row no-gutter">

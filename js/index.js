@@ -284,7 +284,7 @@ if (formAMB && btnSubmitAMB && btnResetAMB && inputBeratAMB && inputTinggiAMB &&
     })
 
     inputUmurAMB.addEventListener('keydown', function (e) {
-        if (['0', 'e', 'E', '+', '-'].includes(e.key)) {
+        if (['', 'e', 'E', '+', '-'].includes(e.key)) {
             e.preventDefault();
             return;
         }
@@ -356,10 +356,9 @@ if (formAMB && btnSubmitAMB && btnResetAMB && inputBeratAMB && inputTinggiAMB &&
         outputUmurAMB.innerHTML = umur;
         outputAMB.innerHTML = caloryUser.toFixed(2) + ' kalori/hari';
 
-        // Change image based on gender
         const profileImage = document.getElementById('profileImage');
         if (kelamin === 'wanita') {
-            profileImage.src = 'https://via.placeholder.com/150?text=Wanita';
+            profileImage.src = '../assets/user_pfp1.svg';
         } else {
             profileImage.src = '../assets/user_pfp.svg';
         }
